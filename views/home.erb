@@ -1,6 +1,16 @@
+<style>
+input {
+  border-radius: 10px;
+}
+button {
+  border-radius: 10px;
+}
+</style>
+
 <p>Click to start adding names to pair!</p>
 
 <form id="f" method = 'post' action = '/home'>
+<div id="box2"></div>
 <button type="button" onclick="newInput()">Add Name</button>
  <input type="submit" value="Submit">
 </form>
@@ -9,9 +19,13 @@
 function newInput() {
     var x = document.createElement("input");
     var f = document.getElementById("f");
+    var v = document.getElementById("box2");
+    var brk = document.createElement('br');
     x.setAttribute("type", 'text');
     x.setAttribute("name", "names[]");
     x.setAttribute("value", "");
     f.appendChild(x);
+    v.appendChild(x);
+    v.appendChild(brk);
     }
 </script>
