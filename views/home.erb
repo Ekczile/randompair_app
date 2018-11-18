@@ -1,17 +1,17 @@
-
-
 <p>Click to start adding names to pair!</p>
-<form method = 'post' action = '/home'>
-<button type="button" onclick="newInput()">Add name</button>
+
+<form id="f" method = 'post' action = '/home'>
+<button type="button" onclick="newInput()">Add Name</button>
  <input type="submit" value="Submit">
 </form>
-</div>
 
 <script>
 function newInput() {
     var x = document.createElement("input");
-    x.setAttribute("type", 'text[]');
-    x.setAttribute("value", "Name Here");
-    document.body.appendChild(x);
+    var f = document.getElementById("f");
+    x.setAttribute("type", 'text');
+    x.setAttribute("name", "names[]");
+    x.setAttribute("value", "");
+    f.appendChild(x);
     }
 </script>

@@ -6,6 +6,15 @@ get '/' do
 end
 
 post '/home' do
-    first_name = params[:fname]
-    redirect '/lastname?fname=' + first_name 
+    names = params[:names].join(",")
+    p names
+    redirect 'pairs?names=' + names
+end     
+
+
+get '/pairs' do
+    names = params[:names].split(",")
+    p names
+    pairednames = create_random_pairs(names)
+    erb :pairs, locals: {names: names, pairednames: pairednames}
 end
