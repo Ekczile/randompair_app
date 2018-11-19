@@ -6,6 +6,9 @@ get '/' do
 end
 
 post '/home' do
+    if params[:names].class != Array
+        redirect '/'
+    end
     names = params[:names].join(",")
     p names
     redirect 'pairs?names=' + names

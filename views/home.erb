@@ -8,25 +8,37 @@ button {
 </style>
 
 <p>Click to start adding names to pair!</p>
-
 <form id="f" method = 'post' action = '/home'>
-<div id="box2"></div>
+<div id="box2">
 <button type="button" onclick="newInput()">Add Name</button>
- <input type="submit" value="Submit">
- <button type="reset" value="Reset">Reset</button>
+<br>
+</div>
+<input type="submit" value="Submit">
+<button type="button" onclick="deleteInput()">Delete</button>
 </form>
 
+
 <script>
+var x = document.createElement("input");
 function newInput() {
-    var x = document.createElement("input");
-    var f = document.getElementById("f");
-    var v = document.getElementById("box2");
-    var brk = document.createElement('br');
-    x.setAttribute("type", 'text');
-    x.setAttribute("name", "names[]");
-    x.setAttribute("value", "");
-    f.appendChild(x);
-    v.appendChild(x);
-    v.appendChild(brk);
-    }
+  var x = document.createElement("input");
+  var f = document.getElementById("f");
+  var v = document.getElementById("box2");
+  var brk = document.createElement('br');
+  x.setAttribute("type", 'text');
+  x.setAttribute("name", "names[]");
+  x.setAttribute("value", "");
+  x.setAttribute("maxlength", "18")
+  f.appendChild(x);
+  v.appendChild(x);
+  v.appendChild(brk);
+}
+function deleteInput() {
+  var d = document.getElementsByName("names[]")
+  var b = document.getElementsByTagName("br")
+  b = b[b.length - 2]
+  b.parentNode.removeChild(b)
+  d = d[d.length - 1]
+  d.parentNode.removeChild(d)
+}
 </script>
