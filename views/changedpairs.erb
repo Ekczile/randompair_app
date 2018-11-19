@@ -30,6 +30,7 @@ list-style-type: circle;
 }
 </style>
 <center><span class="blinking">
+<form action="/pairs" method="post">
 <%pairednames.each do |v| %>
     <li>
     <%v.each do |v|%>
@@ -41,9 +42,9 @@ list-style-type: circle;
 </center>
 <body>
 </body>
-<center><button onclick="window.location.href='/'">Restart</button>
-<div>
-<button onclick="location.reload();">Group agian</button>
-</div>
+<center>
+<button >Regroup</button>
 </center>
+<input type="hidden" name="names[]" value="<%=names%>">
+</form>
 
