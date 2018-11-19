@@ -10,7 +10,11 @@ post '/home' do
         redirect '/'
     end
     names = params[:names].join(",")
-    p names
+    params[:names].each do |v|
+        if v == "" || v == " "
+            redirect '/'
+        end
+    end
     redirect 'pairs?names=' + names
 end     
 
