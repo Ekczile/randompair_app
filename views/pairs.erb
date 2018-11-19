@@ -6,7 +6,7 @@ button {
     text-align: center;
     text-decoration: none;
 }
-header {
+span {
 font-size:30px;
 font-family:Impact, Charcoal, sans-serif
 }
@@ -24,12 +24,21 @@ background: #ff5100
     50%{   color: red;          }
     75%{    color: yellow;        }
     100%{     color: blue;           }
-  
+}
+li {
+list-style-type: circle;
 }
 </style>
-<header>
-<center><span class="blinking"><%=pairednames%></span></center>
-</header>
+<center><span class="blinking">
+<%pairednames.each do |v| %>
+    <li>
+    <%v.each do |v|%>
+        <%=v.concat(", ")%>
+    <%end%><br><br>
+</li>
+<%end%>
+</span>
+</center>
 <body>
 <center><button onclick="window.location.href='/'">Restart</button></center>
 </body>
