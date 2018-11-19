@@ -1,13 +1,48 @@
 <style>
 input {
-  border-radius: 10px;
+ background-color: transparent;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
 }
 button {
-  border-radius: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
 }
-</style>
+}
+header {
+font-family:Impact, Charcoal, sans-serif
 
-<p>Click to start adding names to pair!</p>
+}
+body {
+width: 100vw;
+height: 100vh;
+background: linear-gradient(to left, #ff5100 , #e80000); 
+}
+.blinking{
+font-size:30px;
+    animation:blinkingText 5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: blue;           }
+    25%{    color: yellow;        }
+    50%{   color: purple;          }
+    75%{    color: yellow;        }
+    100%{     color: blue;           }
+  
+}
+
+</style>
+<center>
+<header>
+<font><span class="blinking">Click to start adding names to pair!</span></font>
+</header>
+<body>
+</body>
 <form id="f" method = 'post' action = '/home'>
 <div id="box2">
 <button type="button" onclick="newInput()">Add Name</button>
@@ -16,7 +51,7 @@ button {
 <input type="submit" value="Submit">
 <button type="button" onclick="deleteInput()">Delete</button>
 </form>
-
+</center>
 
 <script>
 var x = document.createElement("input");

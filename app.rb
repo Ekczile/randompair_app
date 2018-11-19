@@ -17,7 +17,6 @@ end
 
 get '/pairs' do
     names = params[:names].split(",")
-    p names
     pairednames = create_random_pairs(names)
     erb :pairs, locals: {names: names, pairednames: pairednames}
 end
